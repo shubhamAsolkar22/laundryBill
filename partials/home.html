@@ -1,0 +1,50 @@
+<div class="home">
+    <h3>Today's laundry</h3>
+    <p class="today-date">{{date | date}}</p>
+    <form>
+        <div class="input-group">
+            <span class="input-group-addon">
+                Shirts
+            </span>
+            <input id="email" type="number" ng-model="shirts" class="form-control" name="Shirts" placeholder="Shirts">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">
+                Pants
+            </span>
+            <input id="password" type="number" ng-model="pants" class="form-control" name="Pants" placeholder="Pants">
+            <!-- <span ng-hide>validation</span>> -->
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">
+                Dress
+            </span>
+            <input id="dress" type="number" ng-model="dresses" class="form-control" name="dress" placeholder="dress">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">
+                Total items :
+                <span ng-bind="shirts+pants+dresses"></span>
+            </span>
+        </div>
+    </form>
+    <hr>
+    <hr>
+    <h3>History...of past 2 months</h2>
+        <div class="history-container" ng-controller="laundaryHistorycontroller">
+            <div class="panel panel-default" ng-repeat="item in history">
+                <div class="panel-heading">{{item.date | date }}</div>
+                <div class="panel-body">
+                    <p>Shirts:{{item.shirts}}    Pants:{{item.pants}}    Dresses:{{item.dresses}}</p> 
+                    <p>Total : {{item.shirts + item.pants + item.dresses}}</p>
+                </div>
+            </div>
+        </div>
+
+</div>
+<script>
+    //select imput on focus 
+    $('.form-control').on('focus', function () {
+        $(this).select();
+    });
+</script>

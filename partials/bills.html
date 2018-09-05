@@ -1,0 +1,9 @@
+<p>Ordered by month..</p>
+<div class="container">
+    <div class="panel panel-primary" ng-repeat="month in monthSummary">
+        <div class="panel-heading"> month: {{month.month}}</div>
+        <div class="panel-body">
+           shirts: {{month.shirts}} pants:{{month.pants}} dresses: {{month.dresses}}
+        </div>
+    </div>
+</div>

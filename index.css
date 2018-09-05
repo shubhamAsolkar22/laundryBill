@@ -1,0 +1,12 @@
+.today-date{
+    color: blueviolet;
+}
+
+#history-banner{
+    margin-left: 10%;
+}
+
+.history-container{
+    min-height : 35%;
+    overflow: scroll;
+}
